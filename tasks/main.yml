@@ -1,0 +1,18 @@
+---
+# tasks file for setup-chocolatey
+
+- name: Ensure chocolatey packages are uninstalled (sequentially)
+  win_chocolatey:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ chocolatey_uninstall_packages }}"
+  when: chocolatey_uninstall_packages is defined
+
+- name: Ensure chocolatey packages are installed (sequentially)
+  win_chocolatey:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ chocolatey_install_packages }}"
+  when: chocolatey_install_packages is defined
+
+

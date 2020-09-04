@@ -1,0 +1,7 @@
+---
+# defaults file for setup-chocolatey
+
+#chocolatey_install_packages:
+#  - python3
+#chocolatey_uninstall_packages:
+#- choco-upgrade-all-at-startup
